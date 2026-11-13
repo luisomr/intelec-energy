@@ -1,6 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
-  <circle cx="22" cy="22" r="21" fill="#1c2b24"/>
-  <path d="M22 8a14 14 0 0 1 0 28 14 14 0 0 1 0-28z" fill="none" stroke="#e8a15a" stroke-width="1.4"/>
-  <path d="M10 22h24" stroke="#e8a15a" stroke-width="1.2"/>
-  <path d="M22 22a11 11 0 0 0 11 0 11 11 0 0 0-11-11z" fill="#d4712a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Intelec Energy Solutions">
+  <rect width="32" height="32" rx="7" fill="#143B28"/>
+  <g transform="translate(4.000 9.310) scale(0.060000) translate(-16.00 -16.00)"
+     stroke="#E49A39" stroke-width="8.0" stroke-linecap="round" fill="none">
+    <path d="M 72.31 231.01 A 147.99 147.99 0 0 1 358.66 230.01"/>
+    <line x1="21.35" y1="117.04" x2="65.81" y2="151.58"/>
+    <line x1="104.28" y1="48.59" x2="134.74" y2="108.60"/>
+    <line x1="214.03" y1="21.96" x2="214.48" y2="90.95"/>
+    <line x1="325.54" y1="47.87" x2="295.60" y2="107.81"/>
+    <line x1="409.31" y1="116.29" x2="365.46" y2="150.63"/>
+  </g>
 </svg>

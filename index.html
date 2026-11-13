@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Intelec Energy Solutions — Solar in Puerto Rico</title>
   <meta name="description" content="Intelec Energy Solutions LLC provides solar energy solutions in Puerto Rico.">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
@@ -67,41 +67,24 @@
 
     header {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      padding: 1.75rem 0 0;
+      padding: 1.5rem 0 0;
     }
 
     .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
+      display: block;
       text-decoration: none;
       color: inherit;
+      flex: 0 1 auto;
+      min-width: 0;
     }
 
-    .mark {
-      width: 44px;
-      height: 44px;
-      flex-shrink: 0;
-    }
-
-    .brand-name {
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      font-size: 0.82rem;
-      text-transform: uppercase;
-      line-height: 1.25;
-    }
-
-    .brand-name span {
+    .logo {
       display: block;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      color: var(--muted);
-      text-transform: none;
-      font-size: 0.78rem;
+      width: min(232px, 64vw);
+      height: auto;
     }
 
     .lang {
@@ -205,8 +188,22 @@
     footer .wrap {
       display: flex;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
       flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .footer-mark {
+      display: block;
+      width: 2.55rem;
+      height: auto;
+      flex-shrink: 0;
     }
 
     footer strong { color: #f3ede3; font-weight: 500; }
@@ -219,6 +216,7 @@
 
     @media (max-width: 560px) {
       main { padding: 3rem 0 2.75rem; }
+      .logo { width: min(200px, 70vw); }
       .contact dl { grid-template-columns: 1fr; row-gap: 0.2rem; }
       .contact dt { margin-top: 0.55rem; }
       .contact dt:first-child { margin-top: 0; }
@@ -229,18 +227,15 @@
   <div class="sky">
     <div class="wrap">
       <header>
-        <div class="brand">
-          <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
-            <circle cx="22" cy="22" r="21" fill="#1c2b24"/>
-            <path d="M22 8a14 14 0 0 1 0 28 14 14 0 0 1 0-28z" fill="none" stroke="#e8a15a" stroke-width="1.4"/>
-            <path d="M10 22h24" stroke="#e8a15a" stroke-width="1.2"/>
-            <path d="M22 22a11 11 0 0 0 11 0 11 11 0 0 0-11-11z" fill="#d4712a"/>
-          </svg>
-          <div class="brand-name">
-            Intelec Energy Solutions
-            <span>LLC</span>
-          </div>
-        </div>
+        <a class="brand" href="./">
+          <img
+            class="logo"
+            src="assets/intelec-wordmark.png"
+            width="900"
+            height="507"
+            alt="Intelec Energy Solutions"
+          >
+        </a>
         <div class="lang" role="group" aria-label="Language">
           <button type="button" id="btn-en" aria-pressed="true">EN</button>
           <button type="button" id="btn-es" aria-pressed="false">ES</button>
@@ -297,7 +292,10 @@
 
   <footer>
     <div class="wrap">
-      <span><strong>Intelec Energy Solutions LLC</strong></span>
+      <span class="footer-brand">
+        <img class="footer-mark" src="assets/intelec-sun.svg" width="432" height="255" alt="">
+        <strong>Intelec Energy Solutions LLC</strong>
+      </span>
       <span>Puerto Rico · 2026</span>
     </div>
   </footer>
