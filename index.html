@@ -3,321 +3,308 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Intelec Energy Solutions — Solar in Puerto Rico</title>
-  <meta name="description" content="Intelec Energy Solutions LLC provides solar energy solutions in Puerto Rico.">
+  <title>Intelec Energy Solutions — Solar Energy in Puerto Rico</title>
+  <meta name="description" content="Intelec Energy Solutions LLC designs and installs solar energy systems for homes and businesses across Puerto Rico. Based in Manatí. Request a free quote.">
+  <link rel="canonical" href="https://intelecenergy.com/">
+  <meta name="theme-color" content="#143B28">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Intelec Energy Solutions">
+  <meta property="og:title" content="Intelec Energy Solutions — Solar Energy in Puerto Rico">
+  <meta property="og:description" content="Solar energy systems for homes and businesses across Puerto Rico. Request a free quote.">
+  <meta property="og:url" content="https://intelecenergy.com/">
+  <meta property="og:image" content="https://intelecenergy.com/assets/hero-solar-home.jpg">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:image:alt" content="Solar panels on the roof of a home in Puerto Rico">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="es_PR">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg?v=2" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/hero-solar-home.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #f3ede3;
       --ink: #1c2b24;
-      --muted: #5a685f;
-      --sun: #c45e1a;
-      --sun-soft: #e8a15a;
+      --muted: #55635a;
+      --green: #143B28;
+      --green-2: #1d4e36;
+      --gold: #E49A39;
+      --gold-dark: #9a5a10;
       --card: #fffcf7;
-      --line: #d8cfc2;
-      --footer: #1c2b24;
+      --line: #ddd3c5;
+      --radius: 1.1rem;
     }
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    html, body {
+    html { scroll-behavior: smooth; }
+    body {
       background: var(--bg);
       color: var(--ink);
       font-family: Outfit, system-ui, sans-serif;
       font-size: 18px;
-      line-height: 1.55;
-      min-height: 100%;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 2.5rem)); margin: 0 auto; }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+    .skip { position: absolute; left: -999px; top: 0; background: var(--green); color: #fff; padding: .5rem 1rem; z-index: 10; }
+    .skip:focus { left: 1rem; top: 1rem; }
 
-    .sky {
-      position: relative;
-      overflow: hidden;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+    /* Header */
+    .site-header { background: var(--bg); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 5; }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .7rem 0; }
+    .brand { display: block; flex: 0 1 auto; min-width: 0; }
+    .logo { width: 170px; }
+    .header-right { display: flex; align-items: center; gap: 1.1rem; }
+    .nav { display: flex; gap: 1.5rem; font-size: .92rem; font-weight: 500; }
+    .nav a { text-decoration: none; color: var(--ink); }
+    .nav a:hover { color: var(--gold-dark); }
+    .lang { display: flex; gap: .15rem; border: 1px solid var(--line); border-radius: 999px; padding: .15rem; background: var(--card); }
+    .lang button { appearance: none; border: 0; background: transparent; color: var(--muted); font: inherit; font-size: .78rem; font-weight: 600; padding: .3rem .7rem; border-radius: 999px; cursor: pointer; }
+    .lang button[aria-pressed="true"] { background: var(--green); color: #fff; }
 
-    .sky::before {
-      content: "";
-      position: absolute;
-      top: -8rem;
-      right: -6rem;
-      width: 26rem;
-      height: 26rem;
-      border-radius: 50%;
-      background: radial-gradient(circle at 40% 40%, #f0c27a 0%, #d4712a 42%, transparent 68%);
-      opacity: 0.45;
-      pointer-events: none;
-    }
+    /* Buttons */
+    .btn { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; font-weight: 600; font-size: 1rem; padding: .95rem 1.6rem; border-radius: 999px; transition: transform .15s ease, background .15s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--gold); color: #1a1206; box-shadow: 0 6px 20px rgba(228,154,57,.35); }
+    .btn-primary:hover { background: #eea84c; }
+    .btn-ghost { color: #fff; border: 1.5px solid rgba(255,255,255,.6); }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+    .btn:focus-visible, .nav a:focus-visible, .lang button:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 
-    .wrap {
-      width: min(920px, calc(100% - 2.5rem));
-      margin: 0 auto;
-      position: relative;
-    }
+    /* Hero */
+    .hero { position: relative; color: #fff; min-height: min(640px, 82vh); display: flex; align-items: center; overflow: hidden; background: var(--green); }
+    .hero picture, .hero picture img { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .hero picture img { object-fit: cover; object-position: 60% center; }
+    .hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(12,38,25,.88) 0%, rgba(12,38,25,.7) 38%, rgba(12,38,25,.15) 70%, rgba(12,38,25,0) 100%); }
+    .hero .wrap { position: relative; z-index: 1; padding: 5rem 0; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; font-size: .8rem; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .eyebrow::before { content: ""; width: 1.6rem; height: 2px; background: currentColor; }
+    .hero h1 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(2.5rem, 5.6vw, 4.1rem); line-height: 1.06; letter-spacing: -.02em; max-width: 13ch; margin-bottom: 1.2rem; text-wrap: balance; }
+    html[lang="es"] .hero h1 { max-width: 15ch; }
+    .hero .sub { font-size: 1.15rem; max-width: 34rem; color: rgba(255,255,255,.9); margin-bottom: 2.1rem; }
+    .cta-row { display: flex; flex-wrap: wrap; gap: .8rem; }
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      padding: 1.5rem 0 0;
-    }
+    /* Sections */
+    section.block { padding: 5.5rem 0; }
+    .section-head { max-width: 40rem; margin-bottom: 2.8rem; }
+    .section-head .eyebrow { color: var(--gold-dark); }
+    h2 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: clamp(1.9rem, 3.6vw, 2.6rem); line-height: 1.12; letter-spacing: -.015em; margin-bottom: .8rem; color: var(--green); text-wrap: balance; }
+    .section-head p { color: var(--muted); font-size: 1.05rem; }
 
-    .brand {
-      display: block;
-      text-decoration: none;
-      color: inherit;
-      flex: 0 1 auto;
-      min-width: 0;
-    }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 2rem 1.8rem; box-shadow: 0 1px 2px rgba(20,59,40,.04), 0 10px 30px -18px rgba(20,59,40,.25); }
+    .icon { width: 3.1rem; height: 3.1rem; border-radius: .9rem; background: #f6e6cf; color: var(--green); display: grid; place-items: center; margin-bottom: 1.3rem; }
+    .icon svg { width: 1.6rem; height: 1.6rem; }
+    .card h3 { font-size: 1.2rem; font-weight: 600; color: var(--green); margin-bottom: .5rem; line-height: 1.3; }
+    .card p { color: var(--muted); font-size: 1rem; }
 
-    .logo {
-      display: block;
-      width: min(232px, 64vw);
-      height: auto;
-    }
+    .how { background: var(--green); color: #fff; }
+    .how h2 { color: #fff; }
+    .how .section-head .eyebrow { color: var(--gold); }
+    .how .section-head p { color: rgba(255,255,255,.8); }
+    .steps { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; counter-reset: step; }
+    .steps li { counter-increment: step; border-top: 2px solid rgba(228,154,57,.6); padding-top: 1.4rem; }
+    .steps li::before { content: counter(step, decimal-leading-zero); display: block; font-family: Fraunces, Georgia, serif; font-size: 2.4rem; color: var(--gold); line-height: 1; margin-bottom: .9rem; }
+    .steps h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: .4rem; }
+    .steps p { color: rgba(255,255,255,.8); font-size: 1rem; }
 
-    .lang {
-      display: flex;
-      gap: 0.15rem;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 0.15rem;
-      background: var(--card);
-    }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 3rem; align-items: start; }
+    .contact-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: .6rem 1.8rem; box-shadow: 0 10px 30px -18px rgba(20,59,40,.25); }
+    .contact-row { display: flex; gap: 1rem; align-items: flex-start; padding: 1.3rem 0; border-bottom: 1px solid var(--line); }
+    .contact-row:last-child { border-bottom: 0; }
+    .contact-row .icon { margin: 0; flex-shrink: 0; width: 2.7rem; height: 2.7rem; border-radius: .75rem; }
+    .contact-row .icon svg { width: 1.3rem; height: 1.3rem; }
+    .label { display: block; font-size: .78rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .15rem; }
+    .value { font-weight: 500; font-size: 1.05rem; }
+    .placeholder { color: var(--muted); font-weight: 400; font-style: italic; border-bottom: 1px dashed #b9ad9c; }
+    address { font-style: normal; }
 
-    .lang button {
-      appearance: none;
-      border: 0;
-      background: transparent;
-      color: var(--muted);
-      font: inherit;
-      font-size: 0.78rem;
-      font-weight: 500;
-      padding: 0.28rem 0.7rem;
-      border-radius: 999px;
-      cursor: pointer;
-    }
-
-    .lang button[aria-pressed="true"] {
-      background: var(--ink);
-      color: var(--card);
-    }
-
-    main { padding: 4.5rem 0 3.5rem; }
-
-    h1 {
-      font-family: Fraunces, Georgia, serif;
-      font-weight: 500;
-      font-size: clamp(2.4rem, 6vw, 3.85rem);
-      line-height: 1.08;
-      letter-spacing: -0.02em;
-      max-width: 14ch;
-      margin-bottom: 1.25rem;
-    }
-
-    .lede {
-      max-width: 38rem;
-      color: var(--muted);
-      font-size: 1.08rem;
-      margin-bottom: 2.75rem;
-    }
-
-    .contact {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 1.1rem;
-      padding: 1.6rem 1.7rem 1.7rem;
-      max-width: 32rem;
-      box-shadow: 0 1px 0 rgba(28, 43, 36, 0.04);
-    }
-
-    .contact h2 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--sun);
-      margin-bottom: 1rem;
-    }
-
-    .contact dl {
-      display: grid;
-      grid-template-columns: 6.2rem 1fr;
-      row-gap: 0.7rem;
-      column-gap: 0.75rem;
-    }
-
-    .contact dt {
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .contact dd { font-weight: 500; }
-
-    .placeholder {
-      color: var(--muted);
-      font-weight: 400;
-      font-style: italic;
-      border-bottom: 1px dashed var(--line);
-      padding-bottom: 0.05rem;
-    }
-
-    address {
-      font-style: normal;
-      font-weight: 500;
-    }
-
-    footer {
-      background: var(--footer);
-      color: #d6ddd8;
-      padding: 1.15rem 0;
-      font-size: 0.82rem;
-    }
-
-    footer .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .footer-brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .footer-mark {
-      display: block;
-      width: 2.55rem;
-      height: auto;
-      flex-shrink: 0;
-    }
-
+    .contact-grid .section-head { margin-bottom: 0; }
+    /* Footer */
+    footer { background: #0f2d1f; color: #c9d3cc; padding: 2rem 0; font-size: .9rem; }
+    footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .footer-brand { display: inline-flex; align-items: center; gap: .8rem; }
+    .footer-mark { width: 2.6rem; flex-shrink: 0; }
     footer strong { color: #f3ede3; font-weight: 500; }
 
-    [lang] [data-i18n] { display: none; }
-    html[lang="en"] [data-i18n="en"],
-    html[lang="es"] [data-i18n="es"] { display: contents; }
+    [data-i18n] { display: none; }
+    html[lang="en"] [data-i18n="en"], html[lang="es"] [data-i18n="es"] { display: inline; }
 
-    html[lang="es"] h1 { max-width: 16ch; }
-
-    @media (max-width: 560px) {
-      main { padding: 3rem 0 2.75rem; }
-      .logo { width: min(200px, 70vw); }
-      .contact dl { grid-template-columns: 1fr; row-gap: 0.2rem; }
-      .contact dt { margin-top: 0.55rem; }
-      .contact dt:first-child { margin-top: 0; }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .cards, .steps { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     }
+    @media (max-width: 560px) {
+      body { font-size: 17px; }
+      .wrap { width: calc(100% - 2.5rem); }
+      .logo { width: 132px; }
+      .hero { min-height: 0; align-items: flex-end; }
+      .hero picture img { object-position: 72% center; }
+      .hero::after { background: linear-gradient(180deg, rgba(12,38,25,.35) 0%, rgba(12,38,25,.7) 45%, rgba(12,38,25,.92) 100%); }
+      .hero .wrap { padding: 9rem 0 3rem; }
+      .hero .sub { font-size: 1.05rem; }
+      .btn { width: 100%; justify-content: center; }
+      section.block { padding: 3.75rem 0; }
+      .section-head { margin-bottom: 2rem; }
+      .card { padding: 1.6rem 1.4rem; }
+      .contact-card { padding: .3rem 1.25rem; }
+      footer .wrap { flex-direction: column; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
   </style>
 </head>
 <body>
-  <div class="sky">
+  <a class="skip" href="#main"><span data-i18n="en">Skip to content</span><span data-i18n="es">Ir al contenido</span></a>
+
+  <header class="site-header">
     <div class="wrap">
-      <header>
-        <a class="brand" href="./">
-          <img
-            class="logo"
-            src="assets/intelec-wordmark.png"
-            width="900"
-            height="507"
-            alt="Intelec Energy Solutions"
-          >
-        </a>
-        <div class="lang" role="group" aria-label="Language">
-          <button type="button" id="btn-en" aria-pressed="true">EN</button>
-          <button type="button" id="btn-es" aria-pressed="false">ES</button>
+      <a class="brand" href="./" aria-label="Intelec Energy Solutions">
+        <img class="logo" src="assets/intelec-wordmark.png" width="900" height="507" alt="Intelec Energy Solutions">
+      </a>
+      <div class="header-right">
+        <nav class="nav" aria-label="Main">
+          <a href="#services"><span data-i18n="en">What we do</span><span data-i18n="es">Servicios</span></a>
+          <a href="#how"><span data-i18n="en">How it works</span><span data-i18n="es">Cómo funciona</span></a>
+          <a href="#contact"><span data-i18n="en">Contact</span><span data-i18n="es">Contacto</span></a>
+        </nav>
+        <div class="lang" role="group" aria-label="Language / Idioma">
+          <button type="button" id="btn-en" aria-pressed="true" lang="en">EN</button>
+          <button type="button" id="btn-es" aria-pressed="false" lang="es">ES</button>
         </div>
-      </header>
-
-      <main>
-        <h1>
-          <span data-i18n="en">Solar energy for Puerto Rico.</span>
-          <span data-i18n="es">Energía solar para Puerto Rico.</span>
-        </h1>
-        <p class="lede">
-          <span data-i18n="en">Intelec Energy Solutions LLC is a solar company based in Puerto Rico. We provide solar energy solutions for homes and businesses on the island.</span>
-          <span data-i18n="es">Intelec Energy Solutions LLC es una empresa de energía solar en Puerto Rico. Ofrecemos soluciones de energía solar para hogares y negocios en la isla.</span>
-        </p>
-
-        <section class="contact" id="contact" aria-labelledby="contact-heading">
-          <h2 id="contact-heading">
-            <span data-i18n="en">Contact</span>
-            <span data-i18n="es">Contacto</span>
-          </h2>
-          <dl>
-            <dt>
-              <span data-i18n="en">Phone</span>
-              <span data-i18n="es">Teléfono</span>
-            </dt>
-            <dd>
-              <span class="placeholder" data-i18n="en">Add your phone number</span>
-              <span class="placeholder" data-i18n="es">Añada su número de teléfono</span>
-            </dd>
-            <dt>
-              <span data-i18n="en">Email</span>
-              <span data-i18n="es">Correo</span>
-            </dt>
-            <dd>
-              <span class="placeholder" data-i18n="en">Add your email address</span>
-              <span class="placeholder" data-i18n="es">Añada su correo electrónico</span>
-            </dd>
-            <dt>
-              <span data-i18n="en">Address</span>
-              <span data-i18n="es">Dirección</span>
-            </dt>
-            <dd>
-              <address>
-                Los Rosales 15, Ave 5<br>
-                Manatí, PR 00674
-              </address>
-            </dd>
-          </dl>
-        </section>
-      </main>
+      </div>
     </div>
-  </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <picture>
+        <source srcset="assets/hero-solar-home.webp" type="image/webp">
+        <img src="assets/hero-solar-home.jpg" width="1280" height="720" alt="" fetchpriority="high">
+      </picture>
+      <div class="wrap">
+        <p class="eyebrow"><span data-i18n="en">Solar energy · Puerto Rico</span><span data-i18n="es">Energía solar · Puerto Rico</span></p>
+        <h1 id="hero-title"><span data-i18n="en">Power your home with Puerto Rico’s sun.</span><span data-i18n="es">Energiza tu hogar con el sol de Puerto Rico.</span></h1>
+        <p class="sub"><span data-i18n="en">Intelec Energy Solutions designs and installs solar energy systems for homes and businesses across the island.</span><span data-i18n="es">Intelec Energy Solutions diseña e instala sistemas de energía solar para hogares y negocios en toda la isla.</span></p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#contact"><span data-i18n="en">Request a free quote</span><span data-i18n="es">Solicita un estimado gratis</span> <span aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#services"><span data-i18n="en">What we do</span><span data-i18n="es">Nuestros servicios</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="services" aria-labelledby="services-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span data-i18n="en">What we do</span><span data-i18n="es">Lo que hacemos</span></p>
+          <h2 id="services-title"><span data-i18n="en">Solar energy, made for Puerto Rico</span><span data-i18n="es">Energía solar pensada para Puerto Rico</span></h2>
+          <p><span data-i18n="en">From a single home to a commercial property, we help you put the island’s sunshine to work.</span><span data-i18n="es">Desde una casa hasta una propiedad comercial, te ayudamos a aprovechar el sol de la isla.</span></p>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v10h14V10"/><path d="M10 20v-5h4v5"/></svg></div>
+            <h3><span data-i18n="en">Solar for homes</span><span data-i18n="es">Solar para hogares</span></h3>
+            <p><span data-i18n="en">Solar energy systems designed around your home, your roof, and the way your family uses electricity.</span><span data-i18n="es">Sistemas de energía solar diseñados según tu casa, tu techo y la forma en que tu familia usa la electricidad.</span></p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 21v-3h6v3"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></div>
+            <h3><span data-i18n="en">Solar for businesses</span><span data-i18n="es">Solar para negocios</span></h3>
+            <p><span data-i18n="en">Solar solutions for shops, offices, and commercial properties, planned around your business’s energy needs.</span><span data-i18n="es">Soluciones solares para comercios, oficinas y propiedades comerciales, planificadas según las necesidades de energía de tu negocio.</span></p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <h3><span data-i18n="en">Service across Puerto Rico</span><span data-i18n="es">Servicio en todo Puerto Rico</span></h3>
+            <p><span data-i18n="en">Based in Manatí, we work with homeowners and businesses throughout the island.</span><span data-i18n="es">Desde Manatí, trabajamos con dueños de hogares y negocios en toda la isla.</span></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block how" id="how" aria-labelledby="how-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow"><span data-i18n="en">How it works</span><span data-i18n="es">Cómo funciona</span></p>
+          <h2 id="how-title"><span data-i18n="en">Going solar, step by step</span><span data-i18n="es">Tu paso a la energía solar</span></h2>
+          <p><span data-i18n="en">A simple process from your first call to a working system.</span><span data-i18n="es">Un proceso sencillo desde tu primera llamada hasta tu sistema funcionando.</span></p>
+        </div>
+        <ol class="steps">
+          <li>
+            <h3><span data-i18n="en">Contact us</span><span data-i18n="es">Contáctanos</span></h3>
+            <p><span data-i18n="en">Tell us about your home or business and what you’re looking for.</span><span data-i18n="es">Cuéntanos sobre tu hogar o negocio y lo que necesitas.</span></p>
+          </li>
+          <li>
+            <h3><span data-i18n="en">We evaluate</span><span data-i18n="es">Evaluamos</span></h3>
+            <p><span data-i18n="en">We review your property and your energy needs.</span><span data-i18n="es">Revisamos tu propiedad y tus necesidades de energía.</span></p>
+          </li>
+          <li>
+            <h3><span data-i18n="en">We design and install</span><span data-i18n="es">Diseñamos e instalamos</span></h3>
+            <p><span data-i18n="en">We design your solar system and install it.</span><span data-i18n="es">Diseñamos tu sistema solar y lo instalamos.</span></p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="section-head">
+          <p class="eyebrow"><span data-i18n="en">Contact</span><span data-i18n="es">Contacto</span></p>
+          <h2 id="contact-title"><span data-i18n="en">Request a free quote</span><span data-i18n="es">Solicita un estimado gratis</span></h2>
+          <p><span data-i18n="en">Ready to explore solar for your home or business? Reach out and we’ll get back to you.</span><span data-i18n="es">¿Listo para considerar la energía solar en tu hogar o negocio? Comunícate con nosotros y te responderemos.</span></p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-row">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></div>
+            <div>
+              <span class="label"><span data-i18n="en">Phone</span><span data-i18n="es">Teléfono</span></span>
+              <span class="value"><span class="placeholder" data-i18n="en">Add your phone number</span><span class="placeholder" data-i18n="es">Añade tu número de teléfono</span></span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+            <div>
+              <span class="label"><span data-i18n="en">Email</span><span data-i18n="es">Correo electrónico</span></span>
+              <span class="value"><span class="placeholder" data-i18n="en">Add your email address</span><span class="placeholder" data-i18n="es">Añade tu correo electrónico</span></span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <div>
+              <span class="label"><span data-i18n="en">Address</span><span data-i18n="es">Dirección</span></span>
+              <address class="value">Los Rosales 15, Ave 5<br>Manatí, PR 00674</address>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="wrap">
       <span class="footer-brand">
         <img class="footer-mark" src="assets/intelec-sun.svg" width="432" height="255" alt="">
-        <strong>Intelec Energy Solutions LLC</strong>
+        <strong>© 2026 Intelec Energy Solutions LLC</strong>
       </span>
-      <span>Puerto Rico · 2026</span>
+      <span>Manatí, Puerto Rico</span>
     </div>
   </footer>
 
   <script>
     (function () {
       var root = document.documentElement;
-      var buttons = {
-        en: document.getElementById("btn-en"),
-        es: document.getElementById("btn-es")
-      };
-
+      var buttons = { en: document.getElementById("btn-en"), es: document.getElementById("btn-es") };
       function setLang(lang) {
         root.lang = lang;
         buttons.en.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
         buttons.es.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
         try { localStorage.setItem("intelec-lang", lang); } catch (e) {}
       }
-
       buttons.en.addEventListener("click", function () { setLang("en"); });
       buttons.es.addEventListener("click", function () { setLang("es"); });
-
       var saved = null;
       try { saved = localStorage.getItem("intelec-lang"); } catch (e) {}
       if (saved === "es" || saved === "en") setLang(saved);
