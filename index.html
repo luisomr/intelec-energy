@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intelec Energy Solutions — Solar in Puerto Rico</title>
+  <meta name="description" content="Intelec Energy Solutions LLC provides solar energy solutions in Puerto Rico.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f3ede3;
+      --ink: #1c2b24;
+      --muted: #5a685f;
+      --sun: #c45e1a;
+      --sun-soft: #e8a15a;
+      --card: #fffcf7;
+      --line: #d8cfc2;
+      --footer: #1c2b24;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Outfit, system-ui, sans-serif;
+      font-size: 18px;
+      line-height: 1.55;
+      min-height: 100%;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sky {
+      position: relative;
+      overflow: hidden;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sky::before {
+      content: "";
+      position: absolute;
+      top: -8rem;
+      right: -6rem;
+      width: 26rem;
+      height: 26rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at 40% 40%, #f0c27a 0%, #d4712a 42%, transparent 68%);
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .wrap {
+      width: min(920px, calc(100% - 2.5rem));
+      margin: 0 auto;
+      position: relative;
+    }
+
+    header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.75rem 0 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .mark {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+    }
+
+    .brand-name {
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      line-height: 1.25;
+    }
+
+    .brand-name span {
+      display: block;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+      text-transform: none;
+      font-size: 0.78rem;
+    }
+
+    .lang {
+      display: flex;
+      gap: 0.15rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.15rem;
+      background: var(--card);
+    }
+
+    .lang button {
+      appearance: none;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.28rem 0.7rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .lang button[aria-pressed="true"] {
+      background: var(--ink);
+      color: var(--card);
+    }
+
+    main { padding: 4.5rem 0 3.5rem; }
+
+    h1 {
+      font-family: Fraunces, Georgia, serif;
+      font-weight: 500;
+      font-size: clamp(2.4rem, 6vw, 3.85rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      max-width: 14ch;
+      margin-bottom: 1.25rem;
+    }
+
+    .lede {
+      max-width: 38rem;
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .contact {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1.1rem;
+      padding: 1.6rem 1.7rem 1.7rem;
+      max-width: 32rem;
+      box-shadow: 0 1px 0 rgba(28, 43, 36, 0.04);
+    }
+
+    .contact h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sun);
+      margin-bottom: 1rem;
+    }
+
+    .contact dl {
+      display: grid;
+      grid-template-columns: 6.2rem 1fr;
+      row-gap: 0.7rem;
+      column-gap: 0.75rem;
+    }
+
+    .contact dt {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .contact dd { font-weight: 500; }
+
+    .placeholder {
+      color: var(--muted);
+      font-weight: 400;
+      font-style: italic;
+      border-bottom: 1px dashed var(--line);
+      padding-bottom: 0.05rem;
+    }
+
+    address {
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    footer {
+      background: var(--footer);
+      color: #d6ddd8;
+      padding: 1.15rem 0;
+      font-size: 0.82rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer strong { color: #f3ede3; font-weight: 500; }
+
+    [lang] [data-i18n] { display: none; }
+    html[lang="en"] [data-i18n="en"],
+    html[lang="es"] [data-i18n="es"] { display: contents; }
+
+    html[lang="es"] h1 { max-width: 16ch; }
+
+    @media (max-width: 560px) {
+      main { padding: 3rem 0 2.75rem; }
+      .contact dl { grid-template-columns: 1fr; row-gap: 0.2rem; }
+      .contact dt { margin-top: 0.55rem; }
+      .contact dt:first-child { margin-top: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <svg class="mark" viewBox="0 0 44 44" aria-hidden="true">
+            <circle cx="22" cy="22" r="21" fill="#1c2b24"/>
+            <path d="M22 8a14 14 0 0 1 0 28 14 14 0 0 1 0-28z" fill="none" stroke="#e8a15a" stroke-width="1.4"/>
+            <path d="M10 22h24" stroke="#e8a15a" stroke-width="1.2"/>
+            <path d="M22 22a11 11 0 0 0 11 0 11 11 0 0 0-11-11z" fill="#d4712a"/>
+          </svg>
+          <div class="brand-name">
+            Intelec Energy Solutions
+            <span>LLC</span>
+          </div>
+        </div>
+        <div class="lang" role="group" aria-label="Language">
+          <button type="button" id="btn-en" aria-pressed="true">EN</button>
+          <button type="button" id="btn-es" aria-pressed="false">ES</button>
+        </div>
+      </header>
+
+      <main>
+        <h1>
+          <span data-i18n="en">Solar energy for Puerto Rico.</span>
+          <span data-i18n="es">Energía solar para Puerto Rico.</span>
+        </h1>
+        <p class="lede">
+          <span data-i18n="en">Intelec Energy Solutions LLC is a solar company based in Puerto Rico. We provide solar energy solutions for homes and businesses on the island.</span>
+          <span data-i18n="es">Intelec Energy Solutions LLC es una empresa de energía solar en Puerto Rico. Ofrecemos soluciones de energía solar para hogares y negocios en la isla.</span>
+        </p>
+
+        <section class="contact" id="contact" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">
+            <span data-i18n="en">Contact</span>
+            <span data-i18n="es">Contacto</span>
+          </h2>
+          <dl>
+            <dt>
+              <span data-i18n="en">Phone</span>
+              <span data-i18n="es">Teléfono</span>
+            </dt>
+            <dd>
+              <span class="placeholder" data-i18n="en">Add your phone number</span>
+              <span class="placeholder" data-i18n="es">Añada su número de teléfono</span>
+            </dd>
+            <dt>
+              <span data-i18n="en">Email</span>
+              <span data-i18n="es">Correo</span>
+            </dt>
+            <dd>
+              <span class="placeholder" data-i18n="en">Add your email address</span>
+              <span class="placeholder" data-i18n="es">Añada su correo electrónico</span>
+            </dd>
+            <dt>
+              <span data-i18n="en">Address</span>
+              <span data-i18n="es">Dirección</span>
+            </dt>
+            <dd>
+              <address>
+                Los Rosales 15, Ave 5<br>
+                Manatí, PR 00674
+              </address>
+            </dd>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap">
+      <span><strong>Intelec Energy Solutions LLC</strong></span>
+      <span>Puerto Rico · 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var buttons = {
+        en: document.getElementById("btn-en"),
+        es: document.getElementById("btn-es")
+      };
+
+      function setLang(lang) {
+        root.lang = lang;
+        buttons.en.setAttribute("aria-pressed", lang === "en" ? "true" : "false");
+        buttons.es.setAttribute("aria-pressed", lang === "es" ? "true" : "false");
+        try { localStorage.setItem("intelec-lang", lang); } catch (e) {}
+      }
+
+      buttons.en.addEventListener("click", function () { setLang("en"); });
+      buttons.es.addEventListener("click", function () { setLang("es"); });
+
+      var saved = null;
+      try { saved = localStorage.getItem("intelec-lang"); } catch (e) {}
+      if (saved === "es" || saved === "en") setLang(saved);
+    })();
+  </script>
+</body>
+</html>
